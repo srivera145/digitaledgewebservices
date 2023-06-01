@@ -1,5 +1,5 @@
 <?php
-$db_host = "localhost";
+$db_host = "https://digitaledgewebservices.herokuapp.com";
 $db_name = "portfolio";
 $db_pass = "";
 $db_user = "root";
