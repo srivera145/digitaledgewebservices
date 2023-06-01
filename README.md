@@ -18,24 +18,24 @@
 
 #### Home Page
 
-<img src="screen/home.png">
+<img src="screen/home.PNG">
 
 #### About Page
 
-<img src="screen/about.png">
+<img src="screen/about.PNG">
 
 #### Resume Page
 
-<img src="screen/resume.png">
+<img src="screen/resume.PNG">
 
 #### Service Page
 
-<img src="screen/services.png">
+<img src="screen/services.PNG">
 
 #### Portfolio Page
 
-<img src="screen/portfolio.png">
+<img src="screen/portfolio.PNG">
 
 #### Contact Page
 
-<img src="screen/contact.png">
+<img src="screen/contact.PNG">
