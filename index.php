@@ -1,7 +1,7 @@
-<?php include 'include/config.php';
+<?php include 'config.php';
 
 $sql = "SELECT * FROM `users` WHERE `users`.`id` = 1";
-$result = mysqli_query($con, $sql);
+$result = mysqli_query($connect, $sql);
 $data = mysqli_fetch_assoc($result);
 
 ?>
@@ -266,7 +266,7 @@ LinkedIn        :  https://www.linkedin.com/in/digitaledgewebservices
     <?php
     
     $counter = "SELECT * FROM `counter`";
-    $counter_result = mysqli_query($con, $counter);
+    $counter_result = mysqli_query($connect, $counter);
 
     ?>
     <!-- ======= Counts ======= -->
@@ -318,7 +318,7 @@ LinkedIn        :  https://www.linkedin.com/in/digitaledgewebservices
       <?php
       
       $skills = "SELECT * FROM `skills`";
-      $skills_result = mysqli_query($con, $skills);
+      $skills_result = mysqli_query($connect, $skills);
 
       if($skills_result -> num_rows > 0){
         while($skills_row = $skills_result -> fetch_assoc()){
@@ -366,7 +366,7 @@ LinkedIn        :  https://www.linkedin.com/in/digitaledgewebservices
         <?php 
         
         $quets = "SELECT * FROM `quets`";
-        $quets_result = mysqli_query($con, $quets);
+        $quets_result = mysqli_query($connect, $quets);
 
         if($quets_result -> num_rows > 0){
           while($quets_row = $quets_result -> fetch_assoc()){
@@ -532,7 +532,7 @@ LinkedIn        :  https://www.linkedin.com/in/digitaledgewebservices
 -->
       <?php 
         $services = "SELECT * FROM `services`";
-        $services_result = mysqli_query($con, $services);
+        $services_result = mysqli_query($connect, $services);
       ?>
 
       <div class="row">
@@ -586,7 +586,7 @@ LinkedIn        :  https://www.linkedin.com/in/digitaledgewebservices
             <li data-filter="*" class="filter-active">All</li>
             <?php
               $cat_list = "SELECT * FROM `category`";
-              $cat_result = mysqli_query($con, $cat_list);
+              $cat_result = mysqli_query($connect, $cat_list);
               if($cat_result -> num_rows > 0){
                 while($cat_data = $cat_result -> fetch_assoc()){
                   ?>
@@ -614,13 +614,13 @@ LinkedIn        :  https://www.linkedin.com/in/digitaledgewebservices
       <div class="row portfolio-container">
         <?php
           $portfolio = "SELECT * FROM `portfolio`";
-          $portfolio_result = mysqli_query($con, $portfolio);
+          $portfolio_result = mysqli_query($connect, $portfolio);
 
           if($portfolio_result -> num_rows > 0){
             while($portfolio_data = $portfolio_result->fetch_assoc()){
               $category = $portfolio_data['category'];
                 $category_sql = "SELECT * FROM `category` WHERE `category`.`id`='$category'";
-                $category_result = mysqli_query($con, $category_sql);
+                $category_result = mysqli_query($connect, $category_sql);
                 $category_data = mysqli_fetch_assoc($category_result);
                 
               ?>
@@ -802,14 +802,14 @@ LinkedIn        :  https://www.linkedin.com/in/digitaledgewebservices
       </div>
       <?php
         if(isset($_POST['send_message'])){
-          global $con;
-          $name = mysqli_real_escape_string($con, $_POST['name']);
-          $email = mysqli_real_escape_string($con, $_POST['email']);
-          $subject = mysqli_real_escape_string($con, $_POST['subject']);
-          $message = mysqli_real_escape_string($con, $_POST['message']);
+          global $connect;
+          $name = mysqli_real_escape_string($connect, $_POST['name']);
+          $email = mysqli_real_escape_string($connect, $_POST['email']);
+          $subject = mysqli_real_escape_string($connect, $_POST['subject']);
+          $message = mysqli_real_escape_string($connect, $_POST['message']);
 
           $contact = "INSERT INTO `contact` (`name`, `email`, `subject`, `message`) VALUES ('$name', '$email', '$subject', '$message')";
-          mysqli_query($con, $contact);
+          mysqli_query($connect, $contact);
         }
       ?>
       <form action="#" method="post" class="mt-4">
@@ -850,7 +850,7 @@ LinkedIn        :  https://www.linkedin.com/in/digitaledgewebservices
     <?php 
     
     $details = "SELECT * FROM `details` WHERE `details`.`id` = 1";
-    $details_result = mysqli_query($con, $details);
+    $details_result = mysqli_query($connect, $details);
     $details_data = mysqli_fetch_assoc($details_result);
 
     ?>

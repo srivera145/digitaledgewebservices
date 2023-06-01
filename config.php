@@ -4,7 +4,7 @@ $db_name = "heroku_a967d42b92a888a ";
 $db_pass = "6e631e0a";
 $db_user = "b5469bbfcda832";
 
-$con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+$connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name) or die("Could not connect to database!");
 
 ?>
 
